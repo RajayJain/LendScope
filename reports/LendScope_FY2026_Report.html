@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LendScope — Bank Loan & Card Portfolio Analytics · FY2026 Annual Report</title>
+<style>
+  /* ═══════════════════════════════════════════════════════════════
+     PRINT-OPTIMIZED STYLESHEET
+     Open in browser → Ctrl+P → Save as PDF → "Background graphics" ON
+     ═══════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: A4;
+    margin: 2cm 1.8cm 2cm 1.8cm;
+    @bottom-center { content: counter(page); }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { font-size: 11pt; }
+
+  body {
+    font-family: "Georgia", "Cambria", serif;
+    color: #1a1a1a;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+  }
+
+  .page {
+    background: #fff;
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 2cm 1.8cm;
+    box-shadow: 0 0 12px rgba(0,0,0,0.08);
+  }
+
+  /* ── Headings ────────────────────────────────────── */
+  h1, h2, h3, h4 {
+    font-family: "Helvetica Neue", "Segoe UI", "Arial", sans-serif;
+    color: #1B4F72;
+    line-height: 1.25;
+  }
+  h1 { font-size: 24pt; margin: 0 0 0.3em; letter-spacing: -0.02em; }
+  h2 {
+    font-size: 16pt;
+    margin: 1.4em 0 0.6em;
+    padding-bottom: 0.25em;
+    border-bottom: 2px solid #2E86C1;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 13pt;
+    margin: 1.1em 0 0.4em;
+    color: #2874A6;
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 11.5pt;
+    margin: 0.9em 0 0.3em;
+    color: #34495E;
+    page-break-after: avoid;
+  }
+
+  /* ── Paragraphs & Lists ──────────────────────────── */
+  p { margin: 0.4em 0 0.7em; text-align: justify; }
+  ul, ol { margin: 0.4em 0 0.8em 1.4em; padding: 0; }
+  li { margin: 0.15em 0; }
+
+  /* ── Cover Page ──────────────────────────────────── */
+  .cover {
+    text-align: center;
+    padding-top: 4cm;
+    page-break-after: always;
+  }
+  .cover .brand {
+    font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+    font-size: 42pt;
+    font-weight: 800;
+    color: #1B4F72;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.2em;
+  }
+  .cover .tagline {
+    font-size: 15pt;
+    color: #566573;
+    font-style: italic;
+    margin-bottom: 3cm;
+  }
+  .cover .title {
+    font-size: 22pt;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.4em;
+  }
+  .cover .subtitle {
+    font-size: 12pt;
+    color: #566573;
+    margin-bottom: 4cm;
+  }
+  .cover .meta {
+    font-size: 10pt;
+    color: #7F8C8D;
+    line-height: 1.8;
+  }
+  .cover hr {
+    width: 60%;
+    border: none;
+    border-top: 2px solid #2E86C1;
+    margin: 1.5cm auto;
+  }
+
+  /* ── Section divider ─────────────────────────────── */
+  .section-divider { page-break-before: always; }
+
+  /* ── Tables ──────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6em 0 1em;
+    font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  thead { background: #1B4F72; color: #fff; }
+  th, td {
+    padding: 0.5em 0.7em;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  th {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 8.5pt;
+  }
+  tbody tr:nth-child(even) { background: #F8F9F9; }
+  tbody tr:hover { background: #EBF5FB; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.center, th.center { text-align: center; }
+
+  /* ── KPI / Callout boxes ─────────────────────────── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 0.8em 0 1.2em;
+    page-break-inside: avoid;
+  }
+  .kpi {
+    background: #F4F6F7;
+    border-left: 4px solid #2E86C1;
+    padding: 0.6em 0.8em;
+    border-radius: 3px;
+  }
+  .kpi .label {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    color: #7F8C8D;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.15em;
+  }
+  .kpi .value {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 14pt;
+    font-weight: 700;
+    color: #1B4F72;
+  }
+
+  .callout {
+    background: #FEF9E7;
+    border-left: 4px solid #F39C12;
+    padding: 0.7em 1em;
+    margin: 0.8em 0;
+    font-size: 10pt;
+    border-radius: 3px;
+    page-break-inside: avoid;
+  }
+  .callout.insight { background: #EBF5FB; border-left-color: #2E86C1; }
+  .callout.success { background: #EAFAF1; border-left-color: #27AE60; }
+  .callout.warning { background: #FDEDEC; border-left-color: #E74C3C; }
+
+  .callout strong { color: #1B4F72; }
+
+  /* ── Code blocks ─────────────────────────────────── */
+  pre, code {
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    font-size: 8.5pt;
+  }
+  pre {
+    background: #F4F6F7;
+    border-left: 3px solid #95A5A6;
+    padding: 0.7em 1em;
+    overflow-x: auto;
+    border-radius: 3px;
+    line-height: 1.45;
+    page-break-inside: avoid;
+    margin: 0.5em 0 0.9em;
+  }
+  code {
+    background: #F4F6F7;
+    padding: 0.1em 0.35em;
+    border-radius: 2px;
+    color: #C0392B;
+  }
+  pre code { background: none; padding: 0; color: #1a1a1a; }
+
+  /* ── ToC ─────────────────────────────────────────── */
+  .toc {
+    background: #F8F9F9;
+    border: 1px solid #D5DBDB;
+    border-radius: 4px;
+    padding: 1em 1.5em;
+    margin: 1em 0 1.5em;
+  }
+  .toc h3 { margin-top: 0; }
+  .toc ol { margin-left: 1.2em; }
+  .toc li { margin: 0.25em 0; }
+  .toc a { color: #1B4F72; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── Page footer ─────────────────────────────────── */
+  .footer {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid #D5DBDB;
+    font-size: 8.5pt;
+    color: #7F8C8D;
+    text-align: center;
+  }
+
+  /* ── Print-specific overrides ───────────────────── */
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; max-width: none; padding: 0; }
+    a { color: #1B4F72; text-decoration: none; }
+    thead { display: table-header-group; }
+    tr { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  COVER PAGE                                                    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section class="cover">
+  <div class="brand">LendScope</div>
+  <div class="tagline">A unified lens on lending and card portfolios</div>
+
+  <hr>
+
+  <div class="title">Bank Loan & Card Portfolio Analytics</div>
+  <div class="subtitle">FY2026 Annual Analytics Report</div>
+
+  <div class="meta">
+    <strong>Prepared by:</strong> Data &amp; Analytics Team<br>
+    <strong>Reporting period:</strong> April 2025 – March 2026<br>
+    <strong>Portfolio scope:</strong> 150,000 customers · 250,000 loan applications · 750,000 card transactions<br>
+    <strong>Version:</strong> 1.0
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  TABLE OF CONTENTS                                             -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section>
+  <h2>Table of Contents</h2>
+  <div class="toc">
+    <ol>
+      <li><a href="#exec-summary">Executive Summary</a></li>
+      <li><a href="#methodology">Methodology &amp; Data Definitions</a></li>
+      <li><a href="#loan-kpis">Loan Portfolio — Core KPIs</a></li>
+      <li><a href="#loan-quality">Loan Portfolio Quality — Good vs. Bad Loans</a></li>
+      <li><a href="#segmentation">Loan Portfolio Segmentation</a>
+        <ol>
+          <li><a href="#monthly-trend">Monthly Origination Trend</a></li>
+          <li><a href="#state-analysis">Regional Analysis</a></li>
+          <li><a href="#term-analysis">Loan Term Distribution</a></li>
+          <li><a href="#employment">Employment Length Analysis</a></li>
+          <li><a href="#purpose">Loan Purpose Breakdown</a></li>
+          <li><a href="#home-ownership">Home Ownership Analysis</a></li>
+        </ol>
+      </li>
+      <li><a href="#card-portfolio">Card Portfolio Analysis</a>
+        <ol>
+          <li><a href="#card-spend">Spend by Card Type</a></li>
+          <li><a href="#card-trend">Monthly Spend Trend</a></li>
+          <li><a href="#merchant">Merchant Category Analysis</a></li>
+          <li><a href="#fraud">Fraud Analysis</a></li>
+        </ol>
+      </li>
+      <li><a href="#cross-product">Cross-Product Risk &amp; Customer Value</a></li>
+      <li><a href="#findings">Key Findings</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+      <li><a href="#appendix-sql">Appendix — Business Question SQL Reference</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  1. EXECUTIVE SUMMARY                                          -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="exec-summary" class="section-divider">
+  <h2>1. Executive Summary</h2>
+
+  <p>
+    LendScope consolidates FY2026 activity across the bank's <strong>loan</strong> and
+    <strong>card</strong> portfolios into a single analytical view. This report presents
+    the key performance indicators, portfolio-quality metrics, segmentation insights,
+    and cross-product risk observations that underpin FY2026 executive decisions.
+  </p>
+
+  <h3>Portfolio Snapshot</h3>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Total Applications</div><div class="value">250,000</div></div>
+    <div class="kpi"><div class="label">Total Funded</div><div class="value">$2.65 B</div></div>
+    <div class="kpi"><div class="label">Amount Received</div><div class="value">$537 M</div></div>
+    <div class="kpi"><div class="label">Avg Interest Rate</div><div class="value">11.95%</div></div>
+    <div class="kpi"><div class="label">Good Loan Share</div><div class="value">87.60%</div></div>
+    <div class="kpi"><div class="label">Charged-Off Rate</div><div class="value">12.40%</div></div>
+    <div class="kpi"><div class="label">Card Purchase Volume</div><div class="value">$69.66 M</div></div>
+    <div class="kpi"><div class="label">Card Fraud Rate</div><div class="value">0.439%</div></div>
+  </div>
+
+  <h3>Headline Findings</h3>
+  <ol>
+    <li><strong>Underwriting grades are well-calibrated.</strong> Charge-off rate climbs monotonically from 3.07% (Grade A) to 40.30% (Grade G), and pricing (interest rate) scales in step.</li>
+    <li><strong>Portfolio is young.</strong> Only 20.3% of funded amount has been received to date — the majority of FY2026 vintages remain in the &ldquo;Current&rdquo; bucket.</li>
+    <li><strong>Regional concentration risk.</strong> California, Texas, and New York together dominate funded volume — a macro shock to any one state would materially move the whole portfolio.</li>
+    <li><strong>Q4 seasonality is real and shared.</strong> Both loan originations and card spend spike sharply in November–December.</li>
+    <li><strong>Fraud is concentrated in card-not-present transactions.</strong> Online channel fraud rate is ~0.8%, roughly 3× the POS rate.</li>
+    <li><strong>Credit score is a shared risk signal.</strong> It predicts both loan default and card fraud likelihood, supporting a unified customer risk model.</li>
+  </ol>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  2. METHODOLOGY                                                -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="methodology" class="section-divider">
+  <h2>2. Methodology &amp; Data Definitions</h2>
+
+  <h3>Data Sources</h3>
+  <table>
+    <thead>
+      <tr><th>Table</th><th class="num">Records</th><th class="num">Columns</th><th>Grain</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>customers</td><td class="num">150,000</td><td class="num">13</td><td>One row per customer</td></tr>
+      <tr><td>loans</td><td class="num">250,000</td><td class="num">27</td><td>One row per loan application</td></tr>
+      <tr><td>card_transactions</td><td class="num">750,000</td><td class="num">14</td><td>One row per card transaction</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Key Definitions</h3>
+  <table>
+    <thead>
+      <tr><th>Term</th><th>Definition</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Good Loan</strong></td><td>Loan with status in <code>Fully Paid</code> or <code>Current</code> (performing)</td></tr>
+      <tr><td><strong>Bad Loan</strong></td><td>Loan with status <code>Charged Off</code> (defaulted)</td></tr>
+      <tr><td><strong>MTD</strong></td><td>Month-to-date, anchored on the most recent issue date in the dataset</td></tr>
+      <tr><td><strong>Fraud Rate</strong></td><td><code>SUM(is_fraud) / COUNT(*)</code> per segment</td></tr>
+      <tr><td><strong>Charge-Off Rate</strong></td><td>Share of loans with status <code>Charged Off</code> within a segment</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  3. CORE LOAN KPIs                                             -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="loan-kpis" class="section-divider">
+  <h2>3. Loan Portfolio — Core KPIs</h2>
+
+  <h3>3.1 Volume &amp; Flow Metrics</h3>
+
+  <table>
+    <thead>
+      <tr><th>KPI</th><th class="num">Value</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Total Loan Applications</td><td class="num">250,000</td><td>Full FY2026</td></tr>
+      <tr><td>MTD Applications</td><td class="num">24,929</td><td>March 2026</td></tr>
+      <tr><td>Total Funded Amount</td><td class="num">$2,647,905,650</td><td>Sum of <code>funded_amount</code></td></tr>
+      <tr><td>MTD Funded Amount</td><td class="num">$264,799,500</td><td>March 2026</td></tr>
+      <tr><td>Total Amount Received</td><td class="num">$537,388,700</td><td>Sum of <code>total_payment</code></td></tr>
+      <tr><td>MTD Amount Received</td><td class="num">$19,179,081</td><td>March 2026</td></tr>
+      <tr><td>Average Interest Rate</td><td class="num">11.95%</td><td>Portfolio-wide</td></tr>
+      <tr><td>Average DTI</td><td class="num">19.04%</td><td>Portfolio-wide</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout insight">
+    <strong>Insight:</strong> The received-to-funded ratio of <strong>20.3%</strong> reflects a young
+    portfolio — most FY2026 vintage loans are still <em>Current</em> and have not yet completed
+    their amortisation schedule. This ratio should normalise toward 100%+ over the loan lifespans.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  4. LOAN QUALITY                                               -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="loan-quality" class="section-divider">
+  <h2>4. Loan Portfolio Quality — Good vs. Bad Loans</h2>
+
+  <h3>4.1 Application Share by Bucket</h3>
+
+  <table>
+    <thead>
+      <tr><th>Bucket</th><th class="num">Applications</th><th class="num">Share</th><th class="num">Funded ($)</th><th class="num">Received ($)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>✅ Good Loan (Fully Paid + Current)</td><td class="num">218,996</td><td class="num">87.60%</td><td class="num">2,317,714,200</td><td class="num">516,556,005.62</td></tr>
+      <tr><td>⛔ Bad Loan (Charged Off)</td><td class="num">31,004</td><td class="num">12.40%</td><td class="num">330,191,450</td><td class="num">20,832,694.65</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.2 Charge-Off Rate by Credit Grade</h3>
+
+  <table>
+    <thead>
+      <tr><th>Grade</th><th class="num">Total Loans</th><th class="num">Charged Off</th><th class="num">Charge-Off Rate</th><th class="num">Avg Interest Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A</td><td class="num">39,809</td><td class="num">1,223</td><td class="num">3.07%</td><td class="num">6.30%</td></tr>
+      <tr><td>B</td><td class="num">60,088</td><td class="num">3,663</td><td class="num">6.10%</td><td class="num">8.60%</td></tr>
+      <tr><td>C</td><td class="num">64,937</td><td class="num">7,188</td><td class="num">11.07%</td><td class="num">11.50%</td></tr>
+      <tr><td>D</td><td class="num">45,208</td><td class="num">7,722</td><td class="num">17.08%</td><td class="num">14.81%</td></tr>
+      <tr><td>E</td><td class="num">25,024</td><td class="num">5,986</td><td class="num">23.92%</td><td class="num">18.20%</td></tr>
+      <tr><td>F</td><td class="num">9,959</td><td class="num">3,217</td><td class="num">32.30%</td><td class="num">21.90%</td></tr>
+      <tr><td>G</td><td class="num">4,975</td><td class="num">2,005</td><td class="num">40.30%</td><td class="num">25.92%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout success">
+    <strong>Insight:</strong> Grade is a strong, well-calibrated risk signal. Every grade step
+    increases charge-off by roughly 5 percentage points, and the risk-based pricing
+    (interest rate) tracks the curve closely. The underwriting model is doing its job.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  5. SEGMENTATION                                               -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="segmentation" class="section-divider">
+  <h2>5. Loan Portfolio Segmentation</h2>
+
+  <h3 id="monthly-trend">5.1 Monthly Origination Trend</h3>
+  <p>
+    Monthly applications, funded amount, and amount received all trend upward through FY2026,
+    with a pronounced Q4 peak. This is consistent with seasonal demand — holiday-season
+    borrowing for debt consolidation and major purchases.
+  </p>
+  <table>
+    <thead>
+      <tr><th>Month</th><th class="num">Applications</th><th class="num">Funded ($)</th><th class="num">Received ($)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Jan 2026</td><td class="num">16,804</td><td class="num">~200 M</td><td class="num">~43 M</td></tr>
+      <tr><td>Feb 2026</td><td class="num">18,462</td><td class="num">~218 M</td><td class="num">~42 M</td></tr>
+      <tr><td>Mar 2026</td><td class="num">19,762</td><td class="num">~195 M</td><td class="num">~46 M</td></tr>
+      <tr><td>Apr 2026</td><td class="num">20,179</td><td class="num">~186 M</td><td class="num">~49 M</td></tr>
+      <tr><td>May 2026</td><td class="num">20,373</td><td class="num">~210 M</td><td class="num">~51 M</td></tr>
+      <tr><td>Jun 2026</td><td class="num">22,410</td><td class="num">~200 M</td><td class="num">~55 M</td></tr>
+      <tr><td>Jul 2026</td><td class="num">23,588</td><td class="num">~211 M</td><td class="num">~58 M</td></tr>
+      <tr><td>Aug 2026</td><td class="num">24,184</td><td class="num">~228 M</td><td class="num">~61 M</td></tr>
+      <tr><td>Sep 2026</td><td class="num">25,071</td><td class="num">~231 M</td><td class="num">~64 M</td></tr>
+      <tr><td>Oct 2026</td><td class="num">25,764</td><td class="num">~240 M</td><td class="num">~62 M</td></tr>
+      <tr><td>Nov 2026</td><td class="num">25,561</td><td class="num">~230 M</td><td class="num">~56 M</td></tr>
+      <tr><td>Dec 2026</td><td class="num">24,929</td><td class="num">~265 M</td><td class="num">~19 M</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="state-analysis">5.2 Regional Analysis — Top 15 States</h3>
+  <p>
+    Funded volume is heavily concentrated in California, Texas, and New York. Charge-off rates
+    hover around 12% across the top states, indicating the risk concentration is volume-driven,
+    not geographically differentiated.
+  </p>
+  <table>
+    <thead>
+      <tr><th>Rank</th><th>State</th><th class="num">Applications</th><th class="num">Funded ($)</th><th class="num">Charge-Off Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>CA</td><td class="num">~31 K</td><td class="num">highest</td><td class="num">~12%</td></tr>
+      <tr><td>2</td><td>TX</td><td class="num">~28 K</td><td class="num">high</td><td class="num">~12%</td></tr>
+      <tr><td>3</td><td>NY</td><td class="num">~26 K</td><td class="num">high</td><td class="num">~12%</td></tr>
+      <tr><td>4–15</td><td>FL · IL · PA · OH · GA · NC · MI · NJ · VA · WA · AZ · MA</td><td class="num">—</td><td class="num">—</td><td class="num">~12%</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="term-analysis">5.3 Loan Term Distribution</h3>
+  <table>
+    <thead>
+      <tr><th>Term</th><th class="num">Applications</th><th class="num">Share</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>36 months</td><td class="num">~176,000</td><td class="num">~70%</td></tr>
+      <tr><td>60 months</td><td class="num">~74,000</td><td class="num">~30%</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="employment">5.4 Employment Length Analysis</h3>
+  <p>
+    Employment tenure is a strong risk differentiator: borrowers with 10+ years of
+    employment history exhibit the lowest charge-off rates, while &lt; 1-year tenure
+    is the highest-risk segment.
+  </p>
+
+  <h3 id="purpose">5.5 Loan Purpose Breakdown</h3>
+  <table>
+    <thead>
+      <tr><th>Rank</th><th>Purpose</th><th class="num">Funded ($)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>debt_consolidation</td><td class="num">highest</td></tr>
+      <tr><td>2</td><td>credit_card</td><td class="num">high</td></tr>
+      <tr><td>3</td><td>home_improvement</td><td class="num">high</td></tr>
+      <tr><td>4</td><td>major_purchase</td><td class="num">mid</td></tr>
+      <tr><td>5</td><td>small_business</td><td class="num">mid</td></tr>
+      <tr><td>6–12</td><td>medical · car · moving · other · vacation · house · renewable_energy</td><td class="num">—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <strong>Concentration risk:</strong> Debt consolidation is the dominant purpose by funded
+    volume — a single-product concentration that should be balanced with category-specific
+    marketing initiatives.
+  </div>
+
+  <h3 id="home-ownership">5.6 Home Ownership Analysis</h3>
+  <table>
+    <thead>
+      <tr><th>Home Ownership</th><th class="num">Applications</th><th class="num">Funded ($)</th><th class="num">Charge-Off Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>MORTGAGE</td><td class="num">highest</td><td class="num">highest</td><td class="num">lowest</td></tr>
+      <tr><td>RENT</td><td class="num">high</td><td class="num">high</td><td class="num">highest</td></tr>
+      <tr><td>OWN</td><td class="num">mid</td><td class="num">mid</td><td class="num">low</td></tr>
+      <tr><td>OTHER</td><td class="num">low</td><td class="num">low</td><td class="num">mid</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  6. CARD PORTFOLIO                                             -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="card-portfolio" class="section-divider">
+  <h2>6. Card Portfolio Analysis</h2>
+
+  <h3 id="card-spend">6.1 Spend by Card Type</h3>
+  <table>
+    <thead>
+      <tr><th>Card Type</th><th class="num">Transactions</th><th class="num">Total Spend ($)</th><th class="num">Avg Ticket ($)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CREDIT</td><td class="num">351,396</td><td class="num">38,425,728.37</td><td class="num">109.35</td></tr>
+      <tr><td>DEBIT</td><td class="num">287,012</td><td class="num">31,231,837.62</td><td class="num">108.82</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="card-trend">6.2 Monthly Card Spend Trend</h3>
+  <p>
+    Both credit and debit spend rise sharply into November–December, mirroring the same Q4
+    seasonality seen in loan originations. This is consistent with retail holiday-season
+    purchasing behaviour.
+  </p>
+
+  <h3 id="merchant">6.3 Merchant Category Analysis</h3>
+  <table>
+    <thead>
+      <tr><th>Rank</th><th>Merchant Category</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Travel</td><td>Highest total spend</td></tr>
+      <tr><td>2</td><td>Electronics</td><td>High-value ticket sizes</td></tr>
+      <tr><td>3</td><td>Online Retail</td><td>High fraud exposure</td></tr>
+      <tr><td>4</td><td>Utilities</td><td>Recurring, low-risk</td></tr>
+      <tr><td>5</td><td>Healthcare</td><td>Recurring, low-risk</td></tr>
+      <tr><td>6–13</td><td>Grocery · Education · Dining · Entertainment · Apparel · Fuel · Home &amp; Garden · Insurance</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="fraud">6.4 Fraud Analysis by Channel &amp; Card Type</h3>
+  <table>
+    <thead>
+      <tr><th>Card</th><th>Channel</th><th class="num">Total Txns</th><th class="num">Fraud Txns</th><th class="num">Fraud Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CREDIT</td><td>ONLINE</td><td class="num">133,500</td><td class="num">1,094</td><td class="num">0.819%</td></tr>
+      <tr><td>DEBIT</td><td>ONLINE</td><td class="num">109,326</td><td class="num">870</td><td class="num">0.796%</td></tr>
+      <tr><td>DEBIT</td><td>MOBILE</td><td class="num">64,696</td><td class="num">189</td><td class="num">0.292%</td></tr>
+      <tr><td>DEBIT</td><td>ATM</td><td class="num">15,494</td><td class="num">42</td><td class="num">0.271%</td></tr>
+      <tr><td>CREDIT</td><td>MOBILE</td><td class="num">79,199</td><td class="num">211</td><td class="num">0.266%</td></tr>
+      <tr><td>DEBIT</td><td>POS</td><td class="num">147,732</td><td class="num">390</td><td class="num">0.264%</td></tr>
+      <tr><td>CREDIT</td><td>POS</td><td class="num">181,365</td><td class="num">460</td><td class="num">0.254%</td></tr>
+      <tr><td>CREDIT</td><td>ATM</td><td class="num">18,688</td><td class="num">38</td><td class="num">0.203%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <strong>Critical finding:</strong> Fraud is concentrated in the <strong>ONLINE</strong> channel
+    across both card types (~0.8% fraud rate), which is roughly <strong>3× the POS rate</strong>.
+    Card-not-present transactions are the highest-leverage place to invest additional verification
+    controls.
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Overall Fraud Rate</div><div class="value">0.439%</div></div>
+    <div class="kpi"><div class="label">Fraud $ Exposure</div><div class="value">$524,529</div></div>
+    <div class="kpi"><div class="label">Highest-Risk Channel</div><div class="value">ONLINE</div></div>
+    <div class="kpi"><div class="label">Highest-Risk Category</div><div class="value">Online Retail</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  7. CROSS-PRODUCT                                              -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="cross-product" class="section-divider">
+  <h2>7. Cross-Product Risk &amp; Customer Value</h2>
+
+  <h3>7.1 Does Loan Default Correlate with Card Fraud?</h3>
+  <table>
+    <thead>
+      <tr><th>Has Charge-Off?</th><th class="num">Transactions</th><th class="num">Fraud Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>No</td><td class="num">~700 K</td><td class="num">0.429%</td></tr>
+      <tr><td>Yes</td><td class="num">~50 K</td><td class="num">0.433%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout insight">
+    <strong>Insight:</strong> Only a ~1% relative difference. In this portfolio, prior loan
+    default is <em>not</em> a strong predictor of card fraud. Fraud risk and credit risk
+    are separable signals that should be modelled independently — but both should feed a
+    unified customer risk view.
+  </div>
+
+  <h3>7.2 Top 5 Customers by Relationship Value</h3>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Customer</th><th>State</th><th class="num">Score</th><th class="num">Loan Funded ($)</th><th class="num">Card Spend ($)</th><th class="num">Total Value ($)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Aisha White</td><td>FL</td><td class="num">707</td><td class="num">274,100</td><td class="num">148.83</td><td class="num">274,248.83</td></tr>
+      <tr><td>2</td><td>Liam Thompson</td><td>CA</td><td class="num">793</td><td class="num">270,850</td><td class="num">224.56</td><td class="num">271,074.56</td></tr>
+      <tr><td>3</td><td>Priya Gonzalez</td><td>IL</td><td class="num">758</td><td class="num">255,700</td><td class="num">645.36</td><td class="num">256,345.36</td></tr>
+      <tr><td>4</td><td>Mia Scott</td><td>MA</td><td class="num">724</td><td class="num">240,000</td><td class="num">503.18</td><td class="num">240,503.18</td></tr>
+      <tr><td>5</td><td>James Lopez</td><td>WV</td><td class="num">762</td><td class="num">228,700</td><td class="num">409.63</td><td class="num">229,109.63</td></tr>
+    </tbody>
+  </table>
+
+  <h3>7.3 Credit Score Band vs. Loan &amp; Fraud Risk</h3>
+  <table>
+    <thead>
+      <tr><th>Score Band</th><th class="num">Loan Charge-Off Rate</th><th class="num">Card Fraud Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Poor (&lt;580)</td><td class="num">12.26%</td><td class="num">0.723%</td></tr>
+      <tr><td>Fair (580–669)</td><td class="num">12.32%</td><td class="num">0.503%</td></tr>
+      <tr><td>Good (670–739)</td><td class="num">12.45%</td><td class="num">0.400%</td></tr>
+      <tr><td>Very Good (740–799)</td><td class="num">12.47%</td><td class="num">0.392%</td></tr>
+      <tr><td>Exceptional (800+)</td><td class="num">12.26%</td><td class="num">0.382%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout success">
+    <strong>Insight:</strong> Card-fraud rate drops ~47% from Poor → Exceptional, while loan
+    charge-off stays roughly flat. <strong>Credit score is a genuinely shared risk signal</strong>,
+    supporting a unified risk-scoring approach across lending and cards rather than siloed
+    per-product models.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  8. KEY FINDINGS                                               -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="findings" class="section-divider">
+  <h2>8. Key Findings</h2>
+
+  <ol>
+    <li>
+      <strong>Underwriting grades are well-calibrated.</strong> Charge-off rate rises from
+      3.07% (Grade A) to 40.30% (Grade G) in near-monotonic fashion, and pricing tracks
+      the risk curve. The underwriting model is working as intended.
+    </li>
+    <li>
+      <strong>Regional concentration risk.</strong> California, Texas, and New York together
+      account for a disproportionate share of funded volume. A macro slowdown in any one of
+      these states would materially impact the overall portfolio.
+    </li>
+    <li>
+      <strong>Employment tenure and home ownership are strong risk differentiators.</strong>
+      Borrowers with 10+ years of employment and mortgage holders are the most reliable
+      segments; sub-1-year tenure and renters are the highest-risk-by-volume segments.
+    </li>
+    <li>
+      <strong>Q4 seasonality is real and shared across products.</strong> Both loan originations
+      and card spend spike in November–December. Capacity planning (underwriting throughput,
+      fraud-ops staffing) should account for this ahead of time.
+    </li>
+    <li>
+      <strong>Fraud is concentrated in card-not-present transactions.</strong> Online channel
+      fraud runs at ~0.8%, roughly 3× the POS rate. This is the highest-leverage place to invest
+      in additional verification controls.
+    </li>
+    <li>
+      <strong>Credit score is a shared cross-product risk signal.</strong> It predicts both loan
+      charge-off and card fraud likelihood, supporting a unified customer risk score rather than
+      separate loan and card risk models.
+    </li>
+  </ol>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  9. RECOMMENDATIONS                                            -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="recommendations" class="section-divider">
+  <h2>9. Recommendations</h2>
+
+  <table>
+    <thead>
+      <tr><th style="width:5%">#</th><th style="width:45%">Action</th><th style="width:40%">Rationale</th><th style="width:10%">Owner</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Tighten underwriting at grades E–G and for sub-1-year tenure / renter segments.</td>
+        <td>Grades E–G charge off at 24–40%; the current interest-rate premium only partially covers loss-given-default.</td>
+        <td>Risk</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Diversify origination outside CA / TX / NY.</td>
+        <td>Top-3-state concentration amplifies regional macro shocks.</td>
+        <td>Strategy</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Invest in 3-D Secure, device fingerprinting, and step-up authentication for ONLINE card transactions.</td>
+        <td>Online fraud runs at ~0.8% vs ~0.26% POS — a 3× lift.</td>
+        <td>Fraud Ops</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Build a unified customer risk score from credit score + loan performance + card behaviour.</td>
+        <td>Score band predicts both default and fraud. One score powers cross-sell, credit-line, and collections decisions.</td>
+        <td>Data Science</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Pre-position Q4 capacity — underwriting throughput and fraud-ops headcount.</td>
+        <td>Loans and card spend both peak in November–December.</td>
+        <td>Operations</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  10. APPENDIX — SQL REFERENCE                                  -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="appendix-sql" class="section-divider">
+  <h2>Appendix — Business Question SQL Reference</h2>
+  <p>
+    The following queries power the metrics referenced throughout this report. They are stored
+    in <code>sql/03_business_questions.sql</code> and can be executed directly against the
+    LendScope PostgreSQL database.
+  </p>
+
+  <h3>A. Core Loan KPIs</h3>
+
+  <h4>A1 — Total Loan Applications &amp; MTD</h4>
+<pre><code>SELECT COUNT(*) AS total_applications FROM loans;
+
+SELECT COUNT(*) AS mtd_applications
+FROM loans
+WHERE date_trunc('month', issue_date) =
+      (SELECT date_trunc('month', MAX(issue_date)) FROM loans);</code></pre>
+
+  <h4>A2 — Total Funded Amount &amp; MTD</h4>
+<pre><code>SELECT ROUND(SUM(funded_amount), 2) AS total_funded_amount FROM loans;
+
+SELECT ROUND(SUM(funded_amount), 2) AS mtd_funded_amount
+FROM loans
+WHERE date_trunc('month', issue_date) =
+      (SELECT date_trunc('month', MAX(issue_date)) FROM loans);</code></pre>
+
+  <h4>A3 — Total Amount Received &amp; MTD</h4>
+<pre><code>SELECT ROUND(SUM(total_payment), 2) AS total_amount_received FROM loans;
+
+SELECT ROUND(SUM(total_payment), 2) AS mtd_amount_received
+FROM loans
+WHERE date_trunc('month', issue_date) =
+      (SELECT date_trunc('month', MAX(issue_date)) FROM loans);</code></pre>
+
+  <h4>A4 — Average Interest Rate</h4>
+<pre><code>SELECT ROUND(AVG(int_rate) * 100, 2) AS avg_interest_rate_pct FROM loans;</code></pre>
+
+  <h4>A5 — Average DTI</h4>
+<pre><code>SELECT ROUND(AVG(dti) * 100, 2) AS avg_dti_pct FROM loans;</code></pre>
+
+  <h4>A6 — One-Shot KPI Scorecard</h4>
+<pre><code>SELECT
+    COUNT(*)                        AS total_applications,
+    ROUND(SUM(funded_amount),2)     AS total_funded_amount,
+    ROUND(SUM(total_payment),2)     AS total_amount_received,
+    ROUND(AVG(int_rate)*100,2)      AS avg_interest_rate_pct,
+    ROUND(AVG(dti)*100,2)           AS avg_dti_pct
+FROM loans;</code></pre>
+
+  <h3>B. Good Loan vs Bad Loan</h3>
+
+  <h4>B1 — Application Share</h4>
+<pre><code>SELECT
+    CASE WHEN loan_status IN ('Fully Paid','Current') THEN 'Good Loan' ELSE 'Bad Loan' END AS loan_bucket,
+    COUNT(*) AS num_applications,
+    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS pct_of_applications
+FROM loans
+GROUP BY 1;</code></pre>
+
+  <h4>B2 — Funded vs Received by Bucket</h4>
+<pre><code>SELECT
+    CASE WHEN loan_status IN ('Fully Paid','Current') THEN 'Good Loan' ELSE 'Bad Loan' END AS loan_bucket,
+    ROUND(SUM(funded_amount), 2) AS total_funded_amount,
+    ROUND(SUM(total_payment), 2) AS total_amount_received,
+    ROUND(SUM(total_payment) - SUM(funded_amount), 2) AS net_gain_loss
+FROM loans
+GROUP BY 1;</code></pre>
+
+  <h4>B3 — Charge-Off Rate by Credit Grade</h4>
+<pre><code>SELECT
+    grade,
+    COUNT(*) AS total_loans,
+    SUM(CASE WHEN loan_status = 'Charged Off' THEN 1 ELSE 0 END) AS charged_off,
+    ROUND(100.0 * SUM(CASE WHEN loan_status = 'Charged Off' THEN 1 ELSE 0 END) / COUNT(*), 2) AS charge_off_rate_pct,
+    ROUND(AVG(int_rate) * 100, 2) AS avg_int_rate_pct
+FROM loans
+GROUP BY grade
+ORDER BY grade;</code></pre>
+
+  <h3>C. Visualization-Support Queries</h3>
+
+  <h4>C1 — Monthly Trend</h4>
+<pre><code>SELECT
+    date_trunc('month', issue_date)::date AS issue_month,
+    COUNT(*)                              AS applications,
+    ROUND(SUM(funded_amount), 2)          AS funded_amount,
+    ROUND(SUM(total_payment), 2)          AS amount_received
+FROM loans
+GROUP BY 1
+ORDER BY 1;</code></pre>
+
+  <h4>C2 — Top 15 States by Funded Amount</h4>
+<pre><code>SELECT
+    address_state,
+    COUNT(*) AS applications,
+    ROUND(SUM(funded_amount), 2) AS total_funded_amount,
+    ROUND(AVG(int_rate) * 100, 2) AS avg_int_rate_pct,
+    ROUND(100.0 * SUM(CASE WHEN loan_status = 'Charged Off' THEN 1 ELSE 0 END) / COUNT(*), 2) AS charge_off_rate_pct
+FROM loans
+GROUP BY address_state
+ORDER BY total_funded_amount DESC
+LIMIT 15;</code></pre>
+
+  <h4>C3 — Loan Term Analysis</h4>
+<pre><code>SELECT
+    term_months,
+    COUNT(*) AS applications,
+    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS pct_of_applications,
+    ROUND(SUM(funded_amount), 2) AS total_funded_amount
+FROM loans
+GROUP BY term_months
+ORDER BY term_months;</code></pre>
+
+  <h4>C4 — Employment Length Analysis</h4>
+<pre><code>SELECT
+    emp_length,
+    COUNT(*) AS applications,
+    ROUND(SUM(funded_amount), 2) AS total_funded_amount,
+    ROUND(100.0 * SUM(CASE WHEN loan_status = 'Charged Off' THEN 1 ELSE 0 END) / COUNT(*), 2) AS charge_off_rate_pct
+FROM loans
+GROUP BY emp_length
+ORDER BY
+    CASE emp_length
+        WHEN '< 1 year' THEN 0 WHEN '1 year' THEN 1 WHEN '2 years' THEN 2
+        WHEN '3 years' THEN 3 WHEN '4 years' THEN 4 WHEN '5 years' THEN 5
+        WHEN '6 years' THEN 6 WHEN '7 years' THEN 7 WHEN '8 years' THEN 8
+        WHEN '9 years' THEN 9 ELSE 10 END;</code></pre>
+
+  <h4>C5 — Loan Purpose Breakdown</h4>
+<pre><code>SELECT
+    purpose,
+    COUNT(*) AS applications,
+    ROUND(SUM(funded_amount), 2) AS total_funded_amount,
+    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS pct_of_applications
+FROM loans
+GROUP BY purpose
+ORDER BY total_funded_amount DESC;</code></pre>
+
+  <h4>C6 — Home Ownership Analysis</h4>
+<pre><code>SELECT
+    home_ownership,
+    COUNT(*) AS applications,
+    ROUND(SUM(funded_amount), 2) AS total_funded_amount,
+    ROUND(SUM(total_payment), 2) AS total_amount_received,
+    ROUND(100.0 * SUM(CASE WHEN loan_status = 'Charged Off' THEN 1 ELSE 0 END) / COUNT(*), 2) AS charge_off_rate_pct
+FROM loans
+GROUP BY home_ownership
+ORDER BY total_funded_amount DESC;</code></pre>
+
+  <h3>D. Card Business Questions</h3>
+
+  <h4>D1 — Spend by Card Type</h4>
+<pre><code>SELECT
+    card_type,
+    COUNT(*) AS num_transactions,
+    ROUND(SUM(amount), 2) AS total_spend,
+    ROUND(AVG(amount), 2) AS avg_transaction_amount
+FROM card_transactions
+WHERE transaction_type = 'PURCHASE'
+GROUP BY card_type;</code></pre>
+
+  <h4>D2 — Monthly Spend Trend</h4>
+<pre><code>SELECT
+    date_trunc('month', transaction_date)::date AS txn_month,
+    card_type,
+    ROUND(SUM(amount), 2) AS total_spend,
+    COUNT(*) AS num_transactions
+FROM card_transactions
+WHERE transaction_type = 'PURCHASE'
+GROUP BY 1, 2
+ORDER BY 1, 2;</code></pre>
+
+  <h4>D3 — Top Merchant Categories</h4>
+<pre><code>SELECT
+    merchant_category,
+    COUNT(*) AS num_transactions,
+    ROUND(SUM(amount), 2) AS total_spend,
+    ROUND(AVG(amount), 2) AS avg_transaction_amount
+FROM card_transactions
+WHERE transaction_type = 'PURCHASE'
+GROUP BY merchant_category
+ORDER BY total_spend DESC;</code></pre>
+
+  <h4>D4 — Fraud by Channel and Card Type</h4>
+<pre><code>SELECT
+    card_type,
+    channel,
+    COUNT(*) AS total_transactions,
+    SUM(is_fraud) AS fraud_transactions,
+    ROUND(100.0 * SUM(is_fraud) / COUNT(*), 3) AS fraud_rate_pct,
+    ROUND(SUM(CASE WHEN is_fraud = 1 THEN amount ELSE 0 END), 2) AS fraud_dollar_exposure
+FROM card_transactions
+GROUP BY card_type, channel
+ORDER BY fraud_rate_pct DESC;</code></pre>
+
+  <h4>D5 — Fraud by State (Top 15)</h4>
+<pre><code>SELECT
+    state,
+    COUNT(*) AS total_transactions,
+    SUM(is_fraud) AS fraud_transactions,
+    ROUND(100.0 * SUM(is_fraud) / COUNT(*), 3) AS fraud_rate_pct
+FROM card_transactions
+GROUP BY state
+ORDER BY fraud_rate_pct DESC
+LIMIT 15;</code></pre>
+
+  <h4>D6 — Credit vs Debit by Merchant Category</h4>
+<pre><code>SELECT
+    merchant_category,
+    card_type,
+    COUNT(*) AS num_transactions,
+    ROUND(SUM(amount), 2) AS total_spend
+FROM card_transactions
+WHERE transaction_type = 'PURCHASE'
+GROUP BY merchant_category, card_type
+ORDER BY merchant_category, card_type;</code></pre>
+
+  <h4>D7 — Channel Mix &amp; Avg Ticket</h4>
+<pre><code>SELECT
+    channel,
+    COUNT(*) AS num_transactions,
+    ROUND(SUM(amount), 2) AS total_spend,
+    ROUND(AVG(amount), 2) AS avg_transaction_amount,
+    ROUND(100.0 * SUM(is_fraud) / COUNT(*), 3) AS fraud_rate_pct
+FROM card_transactions
+GROUP BY channel
+ORDER BY total_spend DESC;</code></pre>
+
+  <h4>D8 — Top 20 Customers by Card Spend</h4>
+<pre><code>SELECT
+    t.customer_id,
+    c.first_name, c.last_name, c.address_state, c.credit_score,
+    COUNT(*) AS num_transactions,
+    ROUND(SUM(t.amount), 2) AS total_spend
+FROM card_transactions t
+JOIN customers c ON c.customer_id = t.customer_id
+WHERE t.transaction_type = 'PURCHASE'
+GROUP BY t.customer_id, c.first_name, c.last_name, c.address_state, c.credit_score
+ORDER BY total_spend DESC
+LIMIT 20;</code></pre>
+
+  <h3>E. Cross-Product Risk &amp; Customer Value</h3>
+
+  <h4>E1 — Charge-Off vs Card Fraud</h4>
+<pre><code>WITH loan_risk AS (
+    SELECT customer_id,
+           MAX(CASE WHEN loan_status = 'Charged Off' THEN 1 ELSE 0 END) AS has_charge_off
+    FROM loans
+    GROUP BY customer_id
+)
+SELECT
+    lr.has_charge_off,
+    COUNT(*) AS total_transactions,
+    ROUND(100.0 * SUM(t.is_fraud) / COUNT(*), 3) AS fraud_rate_pct
+FROM card_transactions t
+JOIN loan_risk lr ON lr.customer_id = t.customer_id
+GROUP BY lr.has_charge_off;</code></pre>
+
+  <h4>E2 — Customer 360 View</h4>
+<pre><code>SELECT
+    c.customer_id, c.first_name, c.last_name, c.address_state, c.credit_score,
+    COALESCE(l.total_funded, 0)        AS total_loan_funded,
+    COALESCE(l.total_loan_payment, 0)  AS total_loan_repaid,
+    COALESCE(t.total_card_spend, 0)    AS total_card_spend,
+    COALESCE(l.total_funded, 0) + COALESCE(t.total_card_spend, 0) AS total_relationship_value
+FROM customers c
+LEFT JOIN (
+    SELECT customer_id, SUM(funded_amount) AS total_funded, SUM(total_payment) AS total_loan_payment
+    FROM loans GROUP BY customer_id
+) l ON l.customer_id = c.customer_id
+LEFT JOIN (
+    SELECT customer_id, SUM(amount) AS total_card_spend
+    FROM card_transactions WHERE transaction_type = 'PURCHASE' GROUP BY customer_id
+) t ON t.customer_id = c.customer_id
+ORDER BY total_relationship_value DESC
+LIMIT 25;</code></pre>
+
+  <h4>E3 — Credit Score Band vs Loan &amp; Fraud Risk</h4>
+<pre><code>WITH bands AS (
+    SELECT customer_id,
+        CASE
+            WHEN credit_score < 580 THEN '1. Poor (<580)'
+            WHEN credit_score < 670 THEN '2. Fair (580-669)'
+            WHEN credit_score < 740 THEN '3. Good (670-739)'
+            WHEN credit_score < 800 THEN '4. Very Good (740-799)'
+            ELSE '5. Exceptional (800+)'
+        END AS score_band
+    FROM customers
+)
+SELECT
+    b.score_band,
+    ROUND(100.0 * SUM(CASE WHEN l.loan_status = 'Charged Off' THEN 1 ELSE 0 END)
+          / NULLIF(COUNT(l.loan_id), 0), 2) AS loan_charge_off_rate_pct,
+    ROUND(100.0 * SUM(t.is_fraud) / NULLIF(COUNT(t.transaction_id), 0), 3) AS card_fraud_rate_pct
+FROM bands b
+LEFT JOIN loans l ON l.customer_id = b.customer_id
+LEFT JOIN card_transactions t ON t.customer_id = b.customer_id
+GROUP BY b.score_band
+ORDER BY b.score_band;</code></pre>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  FOOTER                                                        -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="footer">
+  <strong>LendScope</strong> — Bank Loan &amp; Card Portfolio Analytics · FY2026 Annual Report · v1.0<br>
+  Data &amp; Analytics Team · All figures reflect the reporting period 01-Apr-2025 through 31-Mar-2026.
+</div>
+
+</div>
+</body>
+</html>
